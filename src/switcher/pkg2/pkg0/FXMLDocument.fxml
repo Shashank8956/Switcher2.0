@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="419.0" prefWidth="695.0" style="-fx-background-color: #3b3d42;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="switcher.pkg2.pkg0.FXMLDocumentController">
+   <children>
+      <Pane fx:id="Right_Pane" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="405.0" prefWidth="695.0" style="-fx-background-color: #454951;">
+         <children>
+            <JFXButton fx:id="MainBtn" buttonType="RAISED" layoutX="90.0" layoutY="339.0" onAction="#mainButtonAction" prefHeight="47.0" prefWidth="516.0" ripplerFill="#31af11" style="-fx-background-color: #40ed15;" text="START" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXToolbar layoutY="-18.0" prefHeight="53.0" prefWidth="695.0" style="-fx-background-color: #292b30;">
+               <left>
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="124.0" text="Switcher" textFill="WHITE" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </left>
+               <right>
+                  <JFXHamburger fx:id="Ham" onMouseClicked="#handleButtonAction" prefHeight="41.0" prefWidth="59.0" style="-fx-text-color: ffffff;" stylesheets="@../../../res/Ham.css" BorderPane.alignment="CENTER" />
+               </right>
+            </JFXToolbar>
+            <Label fx:id="Logo" alignment="CENTER" layoutX="270.0" layoutY="137.0" prefHeight="101.0" prefWidth="156.0" text="04:32" textAlignment="CENTER" textFill="#00d0ff">
+               <font>
+                  <Font name="Arial Bold" size="55.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="SettingsPane2" layoutX="-402.0" layoutY="53.0" prefHeight="370.0" prefWidth="402.0" style="-fx-background-color: #454951;">
+         <children>
+            <Rectangle fx:id="Rect1" arcHeight="5.0" arcWidth="5.0" fill="#6a6d73" height="160.0" layoutX="24.0" layoutY="18.0" stroke="#6a6d73" strokeType="INSIDE" width="356.0" />
+            <Rectangle fx:id="Rect2" arcHeight="5.0" arcWidth="5.0" fill="#6a6d73" height="168.0" layoutX="23.0" layoutY="194.0" stroke="#6a6d73" strokeType="INSIDE" width="356.0" />
+            <JFXButton fx:id="SaveBtn" buttonType="RAISED" layoutX="36.0" layoutY="132.0" onAction="#handleButtonAction" prefHeight="34.0" prefWidth="332.0" ripplerFill="#31af11" style="-fx-background-color: #40ed15;" text="SAVE" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></JFXButton>
+            <JFXTextField fx:id="CustFileChooser" focusColor="WHITE" layoutX="36.0" layoutY="43.0" onMouseClicked="#handleFileChooserBtn" prefHeight="34.0" prefWidth="332.0" promptText="Select file" style="-fx-prompt-text-fill: ffffff; -fx-text-fill: ffffff;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="Time1" focusColor="WHITE" labelFloat="true" layoutX="36.0" layoutY="96.0" prefHeight="25.0" prefWidth="125.0" promptText="Start Time" style="-fx-prompt-text-fill: ffffff; -fx-text-fill: ffffff;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="Time2" focusColor="WHITE" labelFloat="true" layoutX="242.0" layoutY="96.0" prefHeight="25.0" prefWidth="125.0" promptText="End Time" style="-fx-prompt-text-fill: ffffff; -fx-text-fill: ffffff;" unFocusColor="WHITE" />
+            <Label layoutX="35.0" layoutY="23.0" prefHeight="17.0" prefWidth="66.0" text="SETTINGS" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="DelSelectBtn" buttonType="RAISED" layoutX="35.0" layoutY="322.0" onAction="#deleteSelected" prefHeight="25.0" prefWidth="147.0" ripplerFill="#31af11" style="-fx-background-color: #40ed15;" text="Delete Selected" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="ClearAllBtn" buttonType="RAISED" layoutX="220.0" layoutY="322.0" onAction="#clearAllBtn" prefHeight="25.0" prefWidth="147.0" ripplerFill="#31af11" style="-fx-background-color: #40ed15;" text="Clear All" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXListView fx:id="FileList" layoutX="32.0" layoutY="201.0" prefHeight="113.0" prefWidth="338.0" />
+            
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

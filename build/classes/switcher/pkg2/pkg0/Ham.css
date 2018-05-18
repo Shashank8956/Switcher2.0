@@ -1,0 +1,31 @@
+.jfx-hamburger StackPane 
+{
+	-fx-background-color: white;
+}
+
+.jfx-snackbar-content{
+        -fx-background-color: #000000;
+}
+
+.jfx-snackbar-toast{
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-font-size: 12pt;
+}
+
+.jfx-list-cell {
+    -fx-background-insets: 0.0;
+}
+
+.jfx-list-cell:selected {
+    -fx-background-color: #78909C;
+}
+
+.jfx-list-cell .jfx-rippler {
+    -fx-rippler-fill: BLUE;
+}
+
+.jfx-list-cell:hover {
+    -fx-background-color: #607D8B;
+}
+

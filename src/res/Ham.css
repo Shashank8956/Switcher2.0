@@ -1,0 +1,12 @@
+.jfx-hamburger StackPane 
+{
+	-fx-background-color: white;
+}
+
+.jfx-snackbar-content{
+        -fx-background-color: black;
+}
+
+.jfx-snackbar-toast{
+    -fx-text-fill: #000000;
+}
