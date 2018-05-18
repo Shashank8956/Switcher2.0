@@ -31,6 +31,8 @@ import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -56,6 +58,7 @@ public class FXMLDocumentController implements Initializable {
     private String time1=null, time2=null, oldPath=null;
     private Switcher s;
     private ArrayList<Model> mod = new ArrayList<Model>();
+    private ArrayList<Model> tempMod = new ArrayList<Model>();
     public DataModel dm = new DataModel();
     private FileSwitcher fs;
     
@@ -198,6 +201,7 @@ public class FXMLDocumentController implements Initializable {
     private void mainButtonAction(ActionEvent event) {
         String text;
         
+        tempMod = (ArrayList<Model>)mod.clone();
         //text = MainBtn.getText();
         if(MainBtn.getText().equals("START"))
         {
@@ -210,8 +214,11 @@ public class FXMLDocumentController implements Initializable {
         {
             fs.stop();
             MainBtn.setText("START");
+            mod = (ArrayList<Model>)tempMod.clone();
+            tempMod.clear();
             populateListView();
         }
+        
     }
     
     @FXML
@@ -399,6 +406,32 @@ public class FXMLDocumentController implements Initializable {
         );
         timeline.setCycleCount( Animation.INDEFINITE );
         timeline.play();
+        
+        Time1.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    Time1.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+                if (Time1.getText().length() > 4) {
+                    String s = Time1.getText().substring(0, 4);
+                    Time1.setText(s);
+                }
+            }
+        });
+        
+        Time2.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    Time2.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+                if (Time2.getText().length() > 4) {
+                    String s = Time2.getText().substring(0, 4);
+                    Time2.setText(s);
+                }
+            }
+        });
     }    
     
 }
