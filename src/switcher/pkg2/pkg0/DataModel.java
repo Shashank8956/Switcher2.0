@@ -15,6 +15,7 @@ public class DataModel {
     String user=null;
     String pass=null;
     ArrayList<Model> mod = new ArrayList<Model>();
+    
     DataModel()
     {
         try {
@@ -27,6 +28,14 @@ public class DataModel {
                         + ");";
             stmt = conn.createStatement();
             stmt.execute(sql);
+            
+            sql = "CREATE TABLE IF NOT EXISTS LoginInfo (\n"
+                + " Username text,\n"
+                + " Password text\n"
+                + ");";
+            stmt = conn.createStatement();
+            stmt.execute(sql);
+            
             if(conn==null)
                 System.out.println("Connection failed!!");
         } catch (SQLException ex) {
@@ -133,5 +142,14 @@ public class DataModel {
             al.show();
             Logger.getLogger(DataBase.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    public ResultSet getLoginCredentials(String username) throws SQLException{
+        String sql = "SELECT * FROM LoginInfo WHERE Username = '"+username+"';";
+        ps = conn.prepareStatement(sql);
+        res = ps.executeQuery();
+        System.out.println(sql);
+        
+        return res;
     }
 }

@@ -27,12 +27,12 @@ public class Switcher20 extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("loginfxml.fxml"));
         //root = FXMLLoader.load(getClass().getResource("Ham.css"));
         String css = Switcher20.class.getResource("Ham.css").toExternalForm();
         Scene scene = new Scene(root);
         scene.getStylesheets().add(css);
-        stage.initStyle(StageStyle.UNDECORATED);
+        stage.initStyle(StageStyle.DECORATED);
         stage.setScene(scene);
         
         stage.show();
