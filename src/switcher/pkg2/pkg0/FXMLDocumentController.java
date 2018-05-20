@@ -38,6 +38,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.effect.GaussianBlur;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
@@ -75,7 +77,7 @@ public class FXMLDocumentController implements Initializable {
     private Pane Right_Pane, SettingsPane2;
     
     @FXML
-    private Label Logo;
+    private Label Logo, mahindra, name;
     
     @FXML
     private JFXListView<String> FileList;
@@ -205,10 +207,18 @@ public class FXMLDocumentController implements Initializable {
         //text = MainBtn.getText();
         if(MainBtn.getText().equals("START"))
         {
-            fs = new FileSwitcher(mod);
-            Thread t = new Thread(fs);
-            t.start();
-            MainBtn.setText("STOP");
+            if(mod.size()>0){
+                fs = new FileSwitcher(mod);
+                Thread t = new Thread(fs);
+                t.start();
+                MainBtn.setText("STOP");
+            }else{
+                Alert al = new Alert(Alert.AlertType.INFORMATION);
+                al.setTitle("Empty list!");
+                al.setContentText("The file list is empty. Nothing to switch!");
+                al.setHeaderText(null);
+                al.show();
+            }
         }
         else if(MainBtn.getText().equals("STOP"))
         {
@@ -406,6 +416,11 @@ public class FXMLDocumentController implements Initializable {
         );
         timeline.setCycleCount( Animation.INDEFINITE );
         timeline.play();
+        
+        ImageView icon = new ImageView(new Image(getClass().getResourceAsStream("mahindra.png")));
+        icon.setFitWidth(193); icon.setFitHeight(52.5);
+        mahindra.setGraphic(icon);
+        
         
         Time1.textProperty().addListener(new ChangeListener<String>() {
             @Override

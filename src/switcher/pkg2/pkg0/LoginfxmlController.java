@@ -40,6 +40,10 @@ public class LoginfxmlController implements Initializable {
     DataModel dm;
     
     
+    @FXML
+    public void onEnter(ActionEvent ae){
+        onLogin(ae);
+    }
     
     public void onLogin(ActionEvent event){
         try {

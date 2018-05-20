@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXHamburger?>
 <?import com.jfoenix.controls.JFXListView?>
@@ -20,7 +13,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="419.0" prefWidth="695.0" style="-fx-background-color: #3b3d42;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="switcher.pkg2.pkg0.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="419.0" prefWidth="695.0" style="-fx-background-color: #3b3d42;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="switcher.pkg2.pkg0.FXMLDocumentController">
    <children>
       <Pane fx:id="Right_Pane" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="405.0" prefWidth="695.0" style="-fx-background-color: #454951;">
          <children>
@@ -48,6 +41,12 @@
                <effect>
                   <Bloom />
                </effect>
+            </Label>
+            <Label fx:id="mahindra" layoutX="486.0" layoutY="43.0" prefHeight="67.0" prefWidth="209.0" />
+            <Label fx:id="name" alignment="CENTER_RIGHT" layoutX="550.0" layoutY="110.0" prefHeight="17.0" prefWidth="125.0" text="Mr. Giridhar Gopal" textFill="#a4a4a4">
+               <font>
+                  <Font name="Arial Bold Italic" size="12.0" />
+               </font>
             </Label>
          </children>
       </Pane>
