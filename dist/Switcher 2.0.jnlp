@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Switcher 2.0.jnlp">
+  <information>
+    <title>Switcher 2.0</title>
+    <vendor>Spongebob</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="lib\jfoenix.jar" size="2414497" download="eager" />
+    <jar href="lib\sqlite-jdbc-3.6.20.1.jar" size="3455871" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Switcher 2.0" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="switcher.pkg2.pkg0.Switcher20"  name="Switcher 2.0" />
+  <update check="always"/>
+</jnlp>
